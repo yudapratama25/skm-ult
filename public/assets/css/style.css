@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap);
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/fotbar.jpg?5ff75f58c4536dce1c3155e0bc2a5cf5);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+
+.min-vh-90 {
+  min-height: 78vh;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
+.card-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-divider {
+  width: 100%;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.02);
+}
+
+.filter-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  width: 30%;
+}
+
+.mxh-90-vh {
+  max-height: 90vh !important;
+}
+
+.card-form {
+  width: 100%;
+  max-height: 78vh;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  overflow-y: auto;
+}
+.card-form .card-form-header {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.02);
+}
+.card-form .card-form-header h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #232B2B;
+  font-size: 1.2em;
+}
+.card-form .card-form-body {
+  padding-bottom: 20px;
+}
