@@ -32,13 +32,12 @@
             <div class="w-50">
                 <div class="card-form min-vh-90">
                     <div class="card-form-header">
-                        <h3>DAFTAR RESPONDEN</h3>
+                        <h3>JUMLAH RESPONDEN</h3>
                     </div>
                     <div class="card-form-body table-responsive">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th width="5%">No.</th>
                                     <th>Nama Responden</th>
                                     <th width="15%">Aksi</th>
                                 </tr>
@@ -46,8 +45,7 @@
                             <tbody>
                                 @forelse ($respondens as $responden)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $responden->nama }}</td>
+                                        <td id="nama-responden-{{ $responden->id }}">Responden Ke-{{ $loop->iteration }}</td>
                                         <td>
                                             <button 
                                                 class="btn btn-primary btn-sm" 
@@ -434,7 +432,11 @@
                                 });
 
             if (response != null) {
-                document.getElementById('td-nama').innerHTML = response.nama;
+                let name = document.getElementById(`nama-responden-${kuesionerId}`).innerHTML;
+                console.log(name);
+                setTimeout(() => {
+                    document.getElementById('td-nama').innerHTML = name;
+                }, 700);
                 document.getElementById('td-jenis-kelamin').innerHTML = (response.jenis_kelamin == "P") ? "Perempuan" : "Laki-laki";
                 document.getElementById('td-pendidikan').innerHTML = response.pendidikan;
                 document.getElementById('td-pekerjaan').innerHTML = response.pekerjaan;

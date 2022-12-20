@@ -29,13 +29,18 @@
                 </div>
             </div>
             <div class="card-form-body">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form action="{{ route('submit-kuesioner') }}" method="POST">
                     @csrf
                     <h6 class="mb-3">I. PROFIL RESPONDEN</h6>
-                    <div class="form-group mb-3">
-                        <label>Nama Lengkap</label>
-                        <input type="text" class="form-control" name="nama" placeholder="Masukan nama lengkap" required>
-                    </div>
                     <div class="form-group mb-3">
                         <label>Jenis Kelamin</label> <br>
                         <div class="form-check form-check-inline">
@@ -85,7 +90,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label>Jenis Layanan Yang Diterima</label>
-                        <input type="text" class="form-control" name="jenis_layanan" placeholder="Masukan jenis layanan" required>
+                        <input type="text" class="form-control" name="jenis_layanan" placeholder="Masukan jenis layanan" value="Akademik" disabled required>
                     </div>
                     <div class="card-divider my-3"></div>
                     <h6 class="mb-3">II. PENDAPAT RESPONDEN TENTANG PELAYANAN</h6>

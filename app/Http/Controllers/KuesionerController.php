@@ -16,12 +16,10 @@ class KuesionerController extends Controller
     public function submitKuesioner(Request $request)
     {
         $this->validate($request, [
-            'nama'          => 'required',
             'jenis_kelamin' => 'required',
             'pendidikan'    => 'required',
             'pekerjaan'     => 'required',
             'instansi'      => 'required',
-            'jenis_layanan' => 'required',
             'p1'            => 'required',
             'p2'            => 'required',
             'p3'            => 'required',
@@ -42,6 +40,8 @@ class KuesionerController extends Controller
         if ($request->saran == null) {
             $input['saran'] = '-';
         }
+
+        $input['jenis_layanan'] = "Akademik";
 
         Kuesioner::create($input);
 

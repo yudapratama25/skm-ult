@@ -12,7 +12,6 @@ class Kuesioner extends Model
     protected $table = 'kuesioners';
 
     protected $fillable = [
-        'nama',
         'jenis_kelamin',
         'pendidikan',
         'pekerjaan',
