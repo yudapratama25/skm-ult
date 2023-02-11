@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kuesioner;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class KuesionerController extends Controller
 {
@@ -45,11 +46,15 @@ class KuesionerController extends Controller
 
         Kuesioner::create($input);
 
-        return redirect('/')->with('success', 'Data Responden Berhasil Disimpan');
+        return redirect('/kuesioner')->with('success', 'Data Responden Berhasil Disimpan');
     }
 
     public function showResponden(Request $request)
     {
+        if (!Session::has('is_login')) {
+            return redirect('/');
+        }
+
         $date_filter = ($request->filled('date')) ? $request->date : null;
         $respondens = Kuesioner::when($request->filled('date'), function($query) use ($date_filter) {
                             return $query->whereDate('created_at', $date_filter);

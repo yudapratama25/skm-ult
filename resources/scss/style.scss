@@ -35,12 +35,16 @@ html, body {
     border-bottom: 5px solid rgba(0, 0, 0, 0.02);
 }
 
-.filter-form {
+.info-form {
     background-color: white;
     border-radius: 10px;
     padding: 15px;
     margin-top: 20px;
-    width: 30%;
+    width: fit-content;
+}
+
+.filter-form {
+    width: 50% !important;
 }
 
 .mxh-90-vh {
@@ -70,5 +74,12 @@ html, body {
 
     .card-form-body {
         padding-bottom: 20px;
+    }
+}
+
+.card-user {
+    &:hover {
+        background-color: #0ab064 !important;
+        cursor: pointer;
     }
 }

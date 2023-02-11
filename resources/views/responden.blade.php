@@ -16,17 +16,41 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   </head>
   <body>
-    <div class="d-flex flex-column align-items-center">
-        <div class="filter-form mb-3">
-            <form action="{{ url('/responden') }}" method="GET" class="d-flex align-items-end">
-                <div class="form-group w-75">
-                    <label>Filter Data:</label>
-                    <input type="date" class="form-control" name="date" value="{{ $date_filter ?? null }}" max="{{ date('Y-m-d') }}" required>
+    <div class="d-flex flex-column">
+        <div class="container-fluid px-4">
+            <div class="row justify-content-between d-flex">
+                <div class="col-6">
+                    <div class="info-form mb-3">
+                        <div class="row align-items-center">
+                            <div class="col-10">
+                                <p class="m-0">
+                                    <strong>Selamat Datang,</strong>
+                                    <br>
+                                    {{ session('admin')->nama }} ({{ session('admin')->nip }})
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <a href="{{ url('/logout') }}" class="btn btn-danger btn-sm" title="Logout">
+                                    <img src="{{ asset('images/logout-skm.png') }}" width="100%">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group w-25 d-flex justify-content-end">
-                    <button class="btn btn-primary" style="width:90%;">Cari</button>
+                <div class="col-6 d-flex justify-content-end">
+                    <div class="info-form filter-form mb-3">
+                        <form action="{{ url('/responden') }}" method="GET" class="d-flex align-items-end">
+                            <div class="form-group w-75">
+                                <label>Filter Data:</label>
+                                <input type="date" class="form-control" name="date" value="{{ $date_filter ?? null }}" max="{{ date('Y-m-d') }}" required>
+                            </div>
+                            <div class="form-group w-25 d-flex justify-content-end">
+                                <button class="btn btn-primary" style="width:90%;">Cari</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
         <div class="d-flex gap-4 align-items-center px-4">
             <div class="w-50">
