@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KuesionerController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +25,7 @@ Route::get('/responden', [KuesionerController::class, 'showResponden']);
 Route::get('/responden/{kuesionerId}', [KuesionerController::class, 'detailResponden']);
 
 Route::post('/submit-kuesioner', [KuesionerController::class, 'submitKuesioner'])->name('submit-kuesioner');
-Route::post('/submit-login', [AdminController::class, 'login'])->name('submit-login');
+Route::post('/submit-login/{type}', [LoginController::class, 'login'])->name('submit-login');
 Route::get('/logout', function() {
     session()->flush();
     return redirect('/');

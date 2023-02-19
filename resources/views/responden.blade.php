@@ -26,7 +26,7 @@
                                 <p class="m-0">
                                     <strong>Selamat Datang,</strong>
                                     <br>
-                                    {{ session('admin')->nama }} ({{ session('admin')->nip }})
+                                    {{ session('user')->nama }} ({{ session('user')->nip }})
                                 </p>
                             </div>
                             <div class="col-2">

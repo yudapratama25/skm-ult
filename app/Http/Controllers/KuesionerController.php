@@ -11,7 +11,11 @@ class KuesionerController extends Controller
 {
     public function showForm()
     {
-        return view('form_kuesioner');
+        if (Session::get('type') == "mahasiswa") {
+            return view('form_kuesioner');
+        }
+
+        return redirect('/');
     }
 
     public function submitKuesioner(Request $request)
@@ -51,7 +55,7 @@ class KuesionerController extends Controller
 
     public function showResponden(Request $request)
     {
-        if (!Session::has('is_login')) {
+        if (!Session::has('is_login') || Session::get('type') != "admin") {
             return redirect('/');
         }
 

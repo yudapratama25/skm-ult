@@ -42,6 +42,14 @@
                     @csrf
                     <h6 class="mb-3">I. PROFIL RESPONDEN</h6>
                     <div class="form-group mb-3">
+                        <label>Nomor Induk Mahasiswa</label>
+                        <input type="text" class="form-control" name="nim" placeholder="" value="{{ session('user')->nim }}" disabled required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" name="nim" placeholder="" value="{{ session('user')->nama }}" disabled required>
+                    </div>
+                    <div class="form-group mb-3">
                         <label>Jenis Kelamin</label> <br>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="jenis_kelamin" id="jk-l" value="L" required>
